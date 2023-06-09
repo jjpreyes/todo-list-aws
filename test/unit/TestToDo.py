@@ -107,7 +107,7 @@ class TestDatabaseFunctions(unittest.TestCase):
     def test_gettranslate_todo(self):
         print ('---------------------')
         print ('Start: test_gettranslate_todo')
-        from src.todoList import get_item
+        from src.todoList import get_item_translate
         from src.todoList import put_item
 
         # Testing file functions
@@ -117,8 +117,9 @@ class TestDatabaseFunctions(unittest.TestCase):
         idItem = json.loads(responsePut['body'])['id']+"/fr"
         print ('Id item + language:' + idItem)
         self.assertEqual(200, responsePut['statusCode'])
-        responseGet = get_item(
+        responseGet = get_item_translate(
                 idItem,
+                "fr",
                 self.dynamodb)
         print ('Response GetTranslate:' + str(responseGet))
         self.assertEqual(
