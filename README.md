@@ -1,3 +1,12 @@
+#GIT
+
+#Movernos a desarrollo
+git checkout develop
+
+git push origin develop
+
+
+
 # todo-list-aws
 
 Este proyecto contiene un ejemplo de solución **SAM + Jenkins**. Contiene una aplicación API RESTful de libreta de tareas pendientes (ToDo) y los pipelines que permiten definir el CI/CD para productivizarla.
@@ -142,7 +151,7 @@ Para la implementación del CI/CD de la aplicación se utilizan los siguientes P
 Para borrar la apliación y eliminar los stacks creados ejecutar los siguientes comandos:
 
 ```bash
-aws cloudformation delete-stack --stack-name todo-list-aws-staging
-aws cloudformation delete-stack --stack-name todo-list-aws-production
+aws cloudformation delete-stack --stack-name todo-list-aws-staging --region us-east-1
+aws cloudformation delete-stack --stack-name todo-list-aws-production --region us-east-1
 ```
 
