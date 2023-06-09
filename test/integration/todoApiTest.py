@@ -125,8 +125,8 @@ class TestApi(unittest.TestCase):
         json_response = response.json()
         print('Response Add Todo: '+ str(json_response))
         jsonbody= json.loads(json_response['body'])
-        ID_TODO = jsonbody['id']+"/fr"
-        print ('ID todo translate:'+ID_TODO)
+        ID_TODO = jsonbody['id']
+        print ('ID todo translate:'+ID_TODO+"/fr")
         self.assertEqual(
             response.status_code, 200, "Error en la petición API a {url}"
         )
@@ -135,7 +135,7 @@ class TestApi(unittest.TestCase):
         )
         #Test GET TODO
         url = BASE_URL+"/todos/"+ID_TODO
-        response = requests.gettranslate(url)
+        response = requests.get(url+"/fr")
         json_response = response.json()
         print('Response Get Translate Todo: '+ str(json_response))
         self.assertEqual(
