@@ -45,7 +45,7 @@ def get_item_translate(key, language, dynamodb=None):
     print('TetBD:' + TextBD)
     try:
         # translate = boto3.client('translate')
-        # response = translate.translate_text(Text=TextBD, 
+        # response = translate.translate_text(Text=TextBD,
         # SourceLanguageCode="en", TargetLanguageCode=str(language))
         if language == 'fr':
             item['text'] = 'Apprendre sans serveur'
