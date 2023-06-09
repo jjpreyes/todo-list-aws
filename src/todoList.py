@@ -51,6 +51,7 @@ def get_item_translate(key, language, dynamodb=None):
             item['text'] = 'Apprendre sans serveur'
         else:
             item['text'] = 'Learn Serverless'
+    
     except ClientError as e:
         print(e.response['Error']['Message'])
     else:
