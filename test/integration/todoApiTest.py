@@ -135,7 +135,7 @@ class TestApi(unittest.TestCase):
         )
         #Test GET TODO
         url = BASE_URL+"/todos/"+ID_TODO
-        response = requests.get_item_translate(url)
+        response = requests.gettranslate(url)
         json_response = response.json()
         print('Response Get Translate Todo: '+ str(json_response))
         self.assertEqual(
