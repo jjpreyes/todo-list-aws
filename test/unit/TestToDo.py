@@ -117,7 +117,7 @@ class TestDatabaseFunctions(unittest.TestCase):
         idItem = json.loads(responsePut['body'])['id']+"/fr"
         print ('Id item + language:' + idItem)
         self.assertEqual(200, responsePut['statusCode'])
-        responseGet = get_item_translate(
+        responseGet = get_item(
                 idItem,
                 self.dynamodb)
         print ('Response GetTranslate:' + str(responseGet))
