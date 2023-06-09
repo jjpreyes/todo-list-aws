@@ -37,22 +37,19 @@ def get_item(key, dynamodb=None):
         if 'Item' in result:
             return result['Item']
 
+
 def get_item_translate(key, language, dynamodb=None):
     item = get_item(key)
-
     print('Result getItem:' + item['text'])
-    
     TextBD = str(item['text'])
-    
     print('TetBD:' + TextBD)
-    
     try:
-#        translate = boto3.client('translate')
-#        response = translate.translate_text(Text=TextBD, SourceLanguageCode="en", TargetLanguageCode=str(language))
+    # translate = boto3.client('translate')
+    # response = translate.translate_text(Text=TextBD, SourceLanguageCode="en", TargetLanguageCode=str(language))
         if language=='fr':
-            item['text']='Apprendre sans serveur'
+            item['text'] = 'Apprendre sans serveur'
         else:
-            item['text']='Learn Serverless'
+            item['text'] = 'Learn Serverless'
     except ClientError as e:
         print(e.response['Error']['Message'])
     else:
