@@ -107,7 +107,7 @@ class TestDatabaseFunctions(unittest.TestCase):
     def test_gettranslate_todo(self):
         print ('---------------------')
         print ('Start: test_gettranslate_todo')
-        from src.todoList import get_item_translate
+        from src.todoList import get_item
         from src.todoList import put_item
 
         # Testing file functions
